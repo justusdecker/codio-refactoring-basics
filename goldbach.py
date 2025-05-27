@@ -34,9 +34,5 @@ def check_user_input_until_integer(prompt:str) -> str:
     return user_input
 if __name__ == "__main__":
     number = int(check_user_input_until_integer("Enter a number: "))
-    
-    #for a,b in sum_of_two_primes(number):
-    #    print(f"The number {number} equals to the sum of {a} and {b}")
-        
     for a,b in short_sotp(number):
         print(f"The number {number} equals to the sum of {a} and {b}")
