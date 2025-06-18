@@ -9,13 +9,11 @@ def sum_of_two_primes(number):
     already_used: list = []
     for i in range(2,number):
         second = number - i
-        if is_prime(i) and second >= 2:
-            for j in range(second,number):
-                if is_prime(j) and i + j == number:
-                    result = [i,j]
-                    result.sort()
-                    if result not in already_used:
-                        already_used.append(result)
+        if is_prime(i) and second >= 2 and is_prime(second):
+            result = [i,second]
+            result.sort()
+            if result not in already_used:
+                already_used.append(result)
     return already_used
 
 def check_user_input_until_integer(prompt:str) -> str:
