@@ -1,7 +1,11 @@
 def is_prime(number:int) -> bool:
     """ Checks if a given integer is a prime number using a list comprehension. """
-    return [(number-1)%n for n in range(1,number)].count(True) == 1
+    if number <= 1:
+        return False  # Numbers less than or equal to 1 are not prime
+    
+    divisors = [n for n in range(2, int(number**0.5) + 1) if number % n == 0]
 
+    return len(divisors) == 0
 
 def sum_of_two_primes(number):
     """ Attempts to find pairs of prime numbers that sum up to a given even number. """
